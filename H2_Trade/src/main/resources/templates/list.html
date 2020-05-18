@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>list</title>
+
+	</head>
+
+	<body>
+	<table class=""  border="1">
+		<thead>
+			<tr>
+				<th>Transaction ID</th>
+				<th>Trade ID</th>
+				<th>Version</th>
+				<th>Security Code</th>
+				<th>Quantity</th>
+				<th>Buy/Shell</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="trade:${trades}">
+				<td th:text="${trade.transaction_id}"></td>
+				<td th:text="${trade.trade_id}"></td>
+				<td th:text="${trade.version}"></td>
+				<td th:text="${trade.security_code}"></td>
+				<td th:text="${trade.quantity}"></td>
+				<td th:text="${trade.buy_or_sell}"></td>
+				<td>
+					<a href="edit" th:href="@{/edit/} + ${trade.transaction_id}">编辑</a>
+					<a href="edit" th:href="@{/delete/} + ${trade.security_code}">删除</a>
+				</td>
+			</tr>
+		</tbody>
+		<h2><a class="" href="add" th:href="@{/add}">交易添加</a></h2>
+	</table>
+
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>add</title>
+</head>
+
+<body>
+
+<form th:action="@{/addData}" method="post">
+	<table border="1">
+		<tr>
+			<td><label>Trade ID</label></td>
+			<td><input name="trade_id" type="text" ></td>
+		</tr>
+		<tr>
+			<td><label>Version</label></td>
+			<td><input name="version" type="text" ></td>
+		</tr>
+		<tr>
+			<td><label>Security Code</label></td>
+			<td><input name="security_code" type="text" ></td>
+		</tr>
+		<tr>
+			<td><label>Quantity</label></td>
+			<td><input name="quantity" type="text" ></td>
+		</tr>
+		<tr>
+			<td><label>Buy/Sell</label></td>
+			<td><input name="buy_or_sell" type="text" ></td>
+		</tr>
+	</table>
+		
+	<button type="submit">添加</button>
+</form>
+
+</body>
+
+</html>
